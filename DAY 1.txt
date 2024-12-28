@@ -1,0 +1,190 @@
+
+var  ==> global scope
+let  ==> local scope
+const ==>constant //pi
+
+datatype ==>number ==>1,1.123
+
+function == > starts with function
+function cat(){}
+
+console.log(a)
+var a=5; // Undefined
+------------------------------------------------------------------------------------------------------
+
+let a=5;
+let a=3;
+console.log(a)   //3
+
+let a=12345678934567890n;   //considers as big integet add n at last
+or
+let a=BigInt(1234567)
+
+------------------------------------------------------------------------------------------------------
+let student1={
+name:"dhi",
+age : 8,
+isStudent : true
+}
+console.log(student1);      //{ name: 'dhi', age: 8, isStudent: true }
+
+let student1={
+    name:["dhi","thendral"],
+    age : 8,
+    isStudent : true,
+    address : {
+        state: "tamilnadu",
+        city: "perundurai"
+    },
+    hello : function(){
+        console.log("hii all")
+    }
+}
+console.log(student1);               
+
+
+output
+
+{
+  name: [ 'dhi', 'thendral' ],
+  age: 8,
+  isStudent: true,
+  address: { state: 'tamilnadu', city: 'perundurai' },
+  hello: [Function: hello]
+}
+------------------------------------------------------------------------------------------------------
+
+let student1={
+    name:["dhi","thendral"],
+    age : 8,
+    isStudent : true,
+    address : {
+        state: "tamilnadu",
+        city: "perundurai"
+    },
+    hello : function(){
+        console.log("hii all")
+    }
+}
+console.log(student1.name);   //D:\MERN Stack>node variable.js
+[ 'dhi', 'thendral' ]
+
+
+console.log(student1.address.state);  //tamilnadu
+
+let student1={
+    name:["dhi","thendral"],
+    age : 8,
+    isStudent : true,
+    address : {
+        state: "tamilnadu",
+        city: "perundurai"
+    },
+    hello : function(){
+        console.log("hii all")
+    }
+}
+student1.hello();   //hii all
+
+------------------------------------------------------------------------------------------------------
+
+let student1={
+    name:["dhi","thendral"],
+    age : 8,
+    isStudent : true,
+    address : {
+        state: "tamilnadu",
+        city: "perundurai"
+    },
+    hello : function(){
+        console.log("hii all")
+    }
+}
+console.log(student1.hello());           //hii all
+undefined
+
+------------------------------------------------------------------------------------------------------
+
+let student1={
+    name:["dhi","thendral"],
+    age : 8,
+    isStudent : true,
+    address : {
+        state: "tamilnadu",
+        city: "perundurai"
+    },
+    hello : function(){
+        console.log("hii all")
+    }
+}
+console.log(student1.name[0]); //dhi
+---------------------------------------------------------------------------------------------------------
+
+let student1=new Object();
+student1.name="dhi";
+student1.age=8;
+console.log(student1);
+ 
+
+o/p { name: 'dhi', age: 8 }
+------------------------------------------------------------------------------------------------------
+
+object declaration
+
+let student1=new Object();
+student1.name="dhi";
+student1.age=8;
+student1.hel=function(){
+     
+    console.log("asdfghj");
+}
+student1.hel()  //asdfghj
+
+------------------------------------------------------------------------------------------------------
+
+OPERATORS
+________
+
+unary (++,--)  1 operand
+binary(+,-,*,/,%) 2 operand
+ternary(conditional) 3 operand
+
+arithmetic
+logical
+comparison
+
+short circuit operators: logical AND(&&) , OR(||)
+
+reason
+
+in AND if first condition false will not proceed to second condition ,will terminate as both should be true in AND
+(30<4) && (9>0)
+
+in OR if first condition true will not proceed to second condition ,will terminate as any one should be true in OR
+(30>4) || (9>0)
+
+-----------------------------------------------------------------------------------------------------------
+increment /decrement
+
+let a=5
+console.log(++a)  // 6
+
+
+let a=5
+console.log(a++)  // 5
+
+let a=5;
+let b= a++ + --a;
+let c= ++b + b++;
+a++;
+console.log(a);
+console.log(b) ; 
+console.log(c)  ;
+
+6
+12
+22
+---------------------------------------------------------
+let a=true;
+!!!!!a;
+console.log(a);  //true(because ! is not stored in a)

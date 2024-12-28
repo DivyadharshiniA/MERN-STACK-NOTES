@@ -1,0 +1,454 @@
+if
+if else
+if elseif else
+nested if else
+switch
+---------------------------------------------------------
+if(condition)
+{
+statements
+}
+else
+{
+statements
+}
+---------------------------------------------------------
+
+var a=5;
+if (a%3==0 && a%5==0)
+{
+    console.log("hai hello");
+    
+}
+else if(a%3==0)
+{
+    console.log("hai");
+}
+else if(a%5==0)
+{
+    console.log("hello")
+}
+else{
+    console.log("none")
+}
+------------------------------------------------------------
+let ch="hello"
+switch(ch){
+    case 'hi':
+        console.log("hii everyone");
+        break;
+    case 'hello':
+        console.log("hello everyone");
+        break;
+    case 'welcome':
+        console.log("welcome everyone");
+        break;
+}
+--------------------------------------------------------------
+let ch=2
+switch(ch){
+    case 1:
+        console.log("one");
+    case 2:
+        console.log("two");
+        break;
+    case 3:
+        console.log("three");
+        break;
+    default:
+        console.log("enter between 1 and 3");
+        break;
+}
+o/p
+two
+------------------------------------------------------------
+let ch=2
+switch(ch){
+    case 1:
+        console.log("one");
+        break;
+    case 2:
+        console.log("two");
+        
+    case 3:
+        console.log("three");
+        break;
+    default:
+        console.log("enter between 1 and 3");
+        break;
+}
+o/p
+two
+three
+--------------------------------------------------------------------
+let ch=2
+switch(ch){
+    case 1:
+        console.log("one");
+        break;
+    case 2:
+        console.log("two");
+        
+    case 3:
+        console.log("three");
+        
+    default:
+        console.log("enter between 1 and 3");
+        
+}
+
+o/p
+two
+three
+enter between 1 and 3
+---------------------------------------------------------------------------------------
+continue skips the current iteration
+break terminates at current iteration
+
+both continue,break cannot be used in if 
+but can be used inside loop inside if
+
+-----------------------------------------------------
+if(false)
+    console.log("hii");
+    console.log("hello");
+o/p
+hello
+-----------------------------------------
+loops
+_____
+
+for
+while
+do while
+------------------------
+for(;;){
+    console.log('hai');
+    
+
+}
+o/p
+hai (infinite times)
+--------------------------------------------------
+let a=1;
+for(console.log('a');a<=3;console.log('b')){
+    console.log('c');
+    a++;
+    
+
+}
+D:\MERN Stack>node variables.js
+a
+c
+b
+c
+b
+c
+b
+----------------------------------------
+let a=1;
+for(a=1;a<100;a++);
+console.log('hi');
+console.log(a);
+    
+o/p
+hi
+100
+---------------------------------
+let a=1;
+for(a=1;a<100;a++)
+console.log('hi');
+console.log(a);
+    
+o/p
+hii( 100 times)
+100
+------------------------------------------------------
+
+for(var a=1;a<100;a++)
+console.log('hi');
+console.log(a);
+    
+o/p
+hi (99 times)
+100
+____________________________________________________
+
+
+for(let a=1;a<100;a++)
+console.log('hi');
+console.log(a);
+    
+o/p
+hii (99 times)
+error
+------------------------------------------------------
+
+
+FUNCTION
+________
+1.Parametarized
+2.Non parametarized
+
+
+
+Non parametarized + without return
+
+function apple(){
+    console.log('apple');   
+}
+apple();
+o/p apple
+---------------------------------------------------
+Non parametarized + with return
+
+function orange(){
+    let a="orange";
+    return a;
+}
+let b=orange();
+console.log(b);
+o/p orange
+------------------------------------------------------
+
+//arrow fn
+
+let apple=()=>{
+    console.log('apple');   
+}
+apple()
+
+-------------------------------------------------------------------------
+let banana=()=>{
+    console.log('nandhini');  
+    return 3+3; 
+}
+console.log(banana())
+o/p
+Nandhini
+6
+---------------------------------------------------------------------
+let banana=()=>{
+    console.log('nandhini');  
+    return 3+3; 
+}
+banana()
+o/p
+Nandhini
+----------------------------------------------------------------------
+parametarized + with return
+//arrow fn
+
+let banana=(a,b)=>{
+    console.log('nandhini');  
+    return a+b; 
+}
+//banana()
+console.log(banana(3,3))
+----------------------------------------------------------------------
+SPREAD OPERATOR
+_______________
+symbol =>  ...
+
+to combine all elements in an array
+
+let a=[1,2,3,4,5]
+let b=[...a];
+console.log(b);
+o/p
+[1,2,3,4,5]
+
+
+-------------------------------------------------------
+let a=10;
+function x(){
+    a=20;
+    console.log(a);
+
+}
+x();
+console.log(a);
+
+o/p 20
+20
+
+let a=[1,2,3,4]
+let x=[5,6,7]
+let b=[...a,...x]
+console.log(b);
+o/p
+[
+  1, 2, 3, 4,
+  5, 6, 7
+]
+
+------------------------------------------------------------------------------------
+REST OPERATOR
+______________
+same as symbol
+...
+
+
+function spreadExample(...values){
+    console.log(values);
+
+}
+spreadExample(1,2,3,4,5,6,7,8);
+
+o/p
+[
+  1, 2, 3, 4,
+  5, 6, 7, 8
+]
+----------------------------------------
+
+function spreadExample(x,...values){
+    console.log(values);
+
+}
+spreadExample(1,2,3,4,5,6,7,8);
+
+o/p
+[
+  2, 3, 4,
+  5, 6, 7, 8
+]
+
+----------------------------------------
+
+function spreadExample(x,y,...values){
+    console.log(values);
+
+}
+spreadExample(1,2,3,4,5,6,7,8);
+
+o/p
+[
+  3, 4,
+  5, 6, 7, 8
+]
+
+----------------------------------------
+
+function spreadExample(...values,x){
+    console.log(values);
+
+}
+spreadExample(1,2,3,4,5,6,7,8);
+
+o/p
+[
+  1,2, 3, 4,
+  5, 6, 7, 8
+]
+
+--------------------------------------------------------
+
+combine the values into an object,
+
+let a={
+    name: "nish",
+    age: 18
+}
+let b={...a};
+console.log(b);
+
+o/p
+{ name: 'nish', age: 18 }
+------------------------------------------------------------
+
+DESTRUCTURING OPERATOR
+______________________
+
+
+
+let a=[1,5,7,8,9];
+let [b,c,x,...y]=a;
+console.log(y);
+
+o/p
+[ 8, 9 ]
+---------------------------------------------
+let a={
+    name:"Nish",
+    age:18,
+    address:"erode"
+}
+
+let {name,age,...address}=a;
+console.log({name,age,address});
+
+o/p
+{ name: 'Nish', age: 18, address: { address: 'erode' } }
+
+---------------------------------------------------------------
+let a={
+    name:"Nish",
+    age:18,
+    address:"erode"
+}
+
+let {name,age,address}=a;
+console.log({name,age,address});
+
+o/p
+{ name: 'Nish', age: 18, address: 'erode' }
+----------------------------------------------------------------
+
+CALL BACK
+passing one fn as the parameter of other function is called callback
+
+function dog(callback){
+    setTimeout(()=>{
+        console.log("jack the dog");
+        callback();
+        
+    },2000);
+}
+function cat(){
+    console.log("Rose the cat");
+}
+dog(cat)
+
+
+O/P
+jack the dog
+Rose the cat
+-------------------------------------------------------------------------
+function attendance(callback){
+    setTimeout(()=>{
+        console.log("first attendance");
+        callback();
+        
+    },2000);
+}
+function lunch(callback){
+    setTimeout(()=>{
+        console.log("eating lunch");
+        callback();
+},1500);
+}
+function home(callback){
+    setTimeout(()=>{
+        console.log("going home");
+        callback();
+},1000);
+}
+attendance(()=>{
+    lunch(()=>{
+        home(()=>{
+            console.log("day completed");
+        })
+    })
+})
+
+
+o/p
+D:\MERN Stack>node variables.js
+first attendance
+eating lunch
+going home
+day completed
+------------------------------------------------------------------------------------------
+PROMISE
+
