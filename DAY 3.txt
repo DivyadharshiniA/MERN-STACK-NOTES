@@ -1,0 +1,253 @@
+Asynchronous
+
+can do their work simultaneous
+------------------------------------
+synchronous
+
+one fn should complete then only go to other fn 
+--------------------------------------------------
+function a1(){
+    setTimeout(()=>{
+        console.log("a1");
+        
+    },1000)
+}
+function a2(){
+    console.log("a2");
+}
+a1();
+a2();
+
+o/p
+a2
+a1
+---------------------------------------------------------------
+call back
+___________
+
+function a1(x){
+    setTimeout(()=>{
+        console.log("a1");
+        x();                       // by using callback a1 first executes and then a2 executes
+    },1000)
+}
+function a2(){
+    console.log("a2");
+}
+a1(a2);
+o/p
+a1
+a2
+
+----------------------------------------------------------
+call back hell
+______________
+
+function inside function like a1(a2(a3)))
+
+________________________________________________
+|                                               |
+|advanced version of callback hell ==> promises |
+|_______________________________________________|
+
+-----------------------------------------------------------------
+Promises
+________
+
+methods
+
+promise.all   => all together execute
+promise.chain =>seprate ah execute aagum
+
+var Promise: PromiseConstructor
+new <any>(executor: (resolve: (value: any) => void, reject: (reason?: any) => void) => void) => Promise<any>
+Creates a new Promise.
+
+@param executor
+A callback used to initialize the promise. This callback is passed two arguments: a resolve callback used to resolve the promise with a value or the result of another promise, and a reject callback used to reject the promise with a provided reason or error.
+
+to create promise
+________________
+
+resolve success
+reject failure
+------------------------------------------------------
+function a1(){
+    return new Promise((resolve,reject)=>{              //confirm ah oru o/p return pandanum so return
+        let datas=true;
+        if (datas)
+            resolve("data returned");
+        else
+            reject("data never returned");
+        
+    })
+    
+}
+--------------------------------------------------
+function a1(){
+    return new Promise((resolve,reject)=>{
+        let datas=true;
+        if (datas)
+            resolve("data returned");
+        else
+            reject("data never returned");
+        
+    })
+    
+}
+a1();
+
+will not give output only runs
+because no console
+----------------------------------
+function a1(){
+    return new Promise((resolve,reject)=>{
+        let datas=true;
+        if (datas)
+            resolve("data returned");
+        else
+            reject("data never returned");
+        
+    })
+    
+}
+a1().then((output)=>{
+    console.log(output);
+    
+
+})
+
+o/p
+data returned
+
+---------------------------------------------
+arrow fn
+
+()=>{}
+--------------------------------------------
+
+function a1(){
+    return new Promise((resolve,reject)=>{
+        let datas=false;
+        if (datas)
+            resolve("data returned");
+        else
+            reject("data never returned");
+        
+    })
+    
+}
+a1().then((output)=>{
+    console.log(output);
+    
+
+})
+
+o/p
+data never returned
+------------------------------------------------
+function a1(){
+    return new Promise((resolve,reject)=>{
+        let datas=false;
+        if (datas)
+            resolve("data returned");
+        else
+            reject("data never returned");
+        
+    })
+    
+}
+a1().then((output)=>{
+    console.log(output);
+    
+
+}).catch((output)=>{
+    console.error(output);
+})
+
+o/p
+data never returned //in red color as error message
+
+---------------------------------------------------------------------
+same for 3 fn
+
+
+function a1(){
+    return new Promise((resolve,reject)=>{
+        let datas=true;
+        if (datas)
+            resolve("data returned");
+        else
+            reject("data never returned");
+        
+    })
+    
+}
+function a2(){
+    return new Promise((resolve,reject)=>{
+        let datas=true;
+        if (datas)
+            resolve("data returned");
+        else
+            reject("data never returned");
+        
+    })
+    
+}
+function a3(){
+    return new Promise((resolve,reject)=>{
+        let datas=true;
+        if (datas)
+            resolve("data returned");
+        else
+            reject("data never returned");
+        
+    })
+    function a1(){
+
+    }
+    function a2(){
+        
+    }
+    function a3(){
+        
+    }
+    
+}
+
+a1().then((output)=>{
+    console.log(output);
+    a2();
+})
+.then((output)=>{
+    console.log(output);
+    a3();
+})
+.then((output)=>{
+    console.log(output);
+})
+.catch((output)=>{
+    console.error(output);
+})
+--------------------------------------------
+
+whenever using await
+use async
+
+
+------------------------------------------------------------
+
+
+REACT
+_____
+
+
+jsx
+single page
+
+
+<></>  => react fragments
+index.html ->start => calls main
+goes to main.jsx =>to app.jsx
+
+
